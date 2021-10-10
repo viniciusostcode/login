@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <form name="login">
+      <h2>Entrar</h2>
+
+      <div class="input-group">
+        <label for="username">Usuário:</label>
+        <input type="text" name="username" id="username" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="password" required />
+      </div>
+
+      <input type="submit" value="Entrar" />
+    </form>
+
+    <script>
+      const form = document.forms.login;
+
+      function saveAccessToken(response) {
+        if (response.accessToken) {
+          localStorage.setItem("ACCESS_TOKEN", response.accessToken);
+          window.location.href = "/home";
+          return;
+        }
+
+        alert(response.message);
+      }
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const url = "/login";
+
+        const { username, password } = this;
+
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: username.value,
+            password: password.value,
+          }),
+        })
+          .then((response) => response.json())
+          .then(saveAccessToken)
+          .catch((error) => alert(error.message));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/styles.css" />
+
+    <script src="scripts.js" defer></script>
+
+    <title>Front - API Node Express</title>
+  </head>
+
+  <body>
+    <button onclick="loggout()">DESLOGAR</button>
+
+    <div class="content">
+      <div class="users-list">
+        <h1>Usuários cadastrados</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>NOME</th>
+              <th>MENSAGENS</th>
+            </tr>
+          </thead>
+
+          <tbody data-js="tbody-users"></tbody>
+        </table>
+      </div>
+
+      <div class="user-messages">
+        <h2>Mensagens do usuário <span data-js="username-message"></span></h2>
+        <ul data-js="ul-user-messages"></ul>
+      </div>
+
+      <form name="user">
+        <h2>Cadastrar usuário</h2>
+
+        <div class="input-group">
+          <label for="username">Usuário:</label>
+          <input type="text" name="username" id="username" required />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Senha:</label>
+          <input type="password" name="password" id="password" required />
+        </div>
+
+        <input type="submit" value="Criar" />
+      </form>
+
+      <form name="message">
+        <h2>Enviar mensagem</h2>
+
+        <div class="input-group">
+          <label for="user">User:</label>
+          <select name="user" id="user" required>
+            <option></option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="message">Mensagem:</label>
+          <textarea name="message" id="message" required></textarea>
+        </div>
+
+        <input type="submit" value="Enviar" />
+      </form>
+    </div>
+  </body>
+</html>

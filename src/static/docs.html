@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>API Node com Express</title>
+
+    <style>
+      pre {
+        background-color: #ccc;
+        border-radius: 8px;
+      }
+
+      .clone {
+        margin-left: 38px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>API Node com Express</h1>
+
+    <h2>Funcionalidades</h2>
+    <ul>
+      <li>
+        Cadastro de usuários
+        <pre>
+        <code>
+        POST http://localhost:3000/users
+
+        {
+          "username": "john",
+          "passsword": "123456"
+        }
+        </code>
+        </pre>
+      </li>
+
+      <li>
+        Cadastro de mensagens para os usuários
+        <pre>
+        <code>
+        POST http:/localhost:3000/users/:userId/messages
+
+        {
+          "message": "Hi, John."
+        }
+        </code>
+        </pre>
+      </li>
+
+      <li>
+        Listagem de todas as mensagens dos usuários
+        <pre>
+        <code>
+        GET http:/localhost:3000/users/:userId/messages
+        </code>
+        </pre>
+      </li>
+
+      <li>
+        Listagem de mensagem específica de um usuário
+        <pre>
+        <code>
+        GET http:/localhost:3000/users/:userId/messages/:messageId
+        </code>
+        </pre>
+      </li>
+
+      <li>
+        Exclusão de mensagem específica de um usuário
+        <pre>
+        <code>
+        DELETE http:/localhost:3000/users/:userId/messages/:messageId
+        </code>
+        </pre>
+      </li>
+    </ul>
+
+    <h2>Instruções para rodar o projeto</h2>
+
+    <h4>Primeiramente clone este repositório</h4>
+    <pre class="clone">
+      <code>
+        git clone https://github.com/AndersonCRocha/api-node-vinicius
+      </code>
+    </pre>
+
+    <ul>
+      <li>
+        <h4>Utilizando Yarn</h4>
+        <pre>
+        <code>
+        yarn
+        yarn start
+        </code>
+        </pre>
+      </li>
+
+      <li>
+        <h4>Utilizando NPM</h4>
+        <pre>
+        <code>
+        npm install
+        npm run start
+        </code>
+        </pre>
+      </li>
+    </ul>
+  </body>
+</html>
