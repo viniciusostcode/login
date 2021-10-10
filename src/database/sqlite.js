@@ -26,11 +26,11 @@ sqlite.run(`
   )
 `);
 
-sqlite.get("SELECT id FROM users WHERE username LIKE 'vinicius'", [], (err, row) => {
+sqlite.get("SELECT id FROM users WHERE username LIKE 'admin'", [], (err, row) => {
   if (err) return console.error(err);
   
   if (!row) {
-    sqlite.run(`INSERT INTO users (username, password) VALUES('vinicius', 'admin')`)
+    sqlite.run(`INSERT INTO users (username, password) VALUES('admin', 'admin')`)
   }
 });
 
