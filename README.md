@@ -45,7 +45,7 @@ DELETE http://localhost:3000/users/:userId/messages/:messageId
 
 #### Primeiramente clone este repositório
 
-`git clone https://github.com/AndersonCRocha/api-node-vinicius`
+`git clone https://github.com/viniciusostcode/login`
 
 #### Utilizando Yarn
 
